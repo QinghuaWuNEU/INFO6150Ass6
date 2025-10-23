@@ -1,0 +1,170 @@
+/* Part B Specific Styling */
+
+/* Timer Display */
+.timer-display-area {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.timer-display {
+    font-size: 4em; /* Requirement: large, striking display (min 48px) */
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Control Buttons Layout (Flexbox) */
+.control-buttons-group {
+    display: flex;
+    justify-content: center; /* Center main timer display */
+    gap: 15px;
+    margin: 30px 0;
+    /* Requirement: Group control buttons horizontally */
+}
+
+/* Color Coding for Buttons (Required) */
+.btn-control {
+    flex-grow: 1;
+    font-size: 1.1em;
+    padding: 15px 10px;
+    font-weight: bold;
+    max-width: 150px;
+}
+
+.btn-start {
+    background-color: var(--success-color); /* Green */
+    color: white;
+}
+.btn-pause {
+    background-color: #ffc107; /* Yellow/Warning */
+    color: var(--text-color);
+}
+.btn-stop {
+    background-color: var(--error-color); /* Red */
+    color: white;
+}
+.btn-reset {
+    background-color: #6c757d; /* Grey */
+    color: white;
+}
+
+/* Disabled state styling for form fields and buttons (Required) */
+input:disabled,
+.btn-control:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Statistics Section */
+.statistics-section {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    text-align: center;
+}
+.statistics-section h3 {
+    margin-bottom: 10px;
+}
+#totalDuration {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+/* Session History */
+.history-section {
+    padding-top: 20px;
+    border-top: 2px dashed #ccc;
+}
+.history-section h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-left: 5px solid var(--primary-color); /* Clear visual separation */
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.session-item p {
+    margin: 0;
+}
+.session-duration {
+    font-weight: bold;
+    color: var(--error-color);
+}
+
+.no-data-message {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+    border: 1px dashed #ccc;
+    border-radius: var(--border-radius);
+}
+
+/* Filter and Responsive */
+.filter-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#filterDate {
+    flex-grow: 1;
+}
+
+/* --- Modal Dialog Styling with Backdrop (Required) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Backdrop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-dialog {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 90%;
+    min-width: 300px;
+}
+.modal-dialog p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Responsive Layout: Stack buttons on mobile */
+@media (max-width: 600px) {
+    .control-buttons-group {
+        flex-direction: column; /* Stack on mobile */
+        gap: 10px;
+    }
+    .btn-control {
+        max-width: 100%;
+    }
+    .timer-display {
+        font-size: 3em;
+    }
+    .session-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

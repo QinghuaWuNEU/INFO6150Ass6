@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Stopwatch - Part B</title>
+    <link rel="stylesheet" href="../PartA/css/styles.css"> 
+    <link rel="stylesheet" href="css/stopwatch-styles.css"> 
+</head>
+<body>
+    <div class="container stopwatch-app">
+        <h1>Event Stopwatch</h1>
+
+        <div class="timer-display-area">
+            <div id="timerDisplay" class="timer-display">00:00:00</div>
+        </div>
+
+        <div class="event-details-section">
+            <h2>Event Details</h2>
+            
+            <div class="form-group">
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate"> 
+                <div class="error-message" id="dateError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" placeholder="What are you timing?">
+                <div class="error-message" id="nameError"></div>
+            </div>
+        </div>
+
+        <div class="control-buttons-group">
+            <button id="startButton" class="btn-control btn-start">Start</button>
+            <button id="pauseResumeButton" class="btn-control btn-pause" disabled>Pause</button>
+            <button id="stopSaveButton" class="btn-control btn-stop" disabled>Stop & Save</button>
+            <button id="resetButton" class="btn-control btn-reset">Reset</button>
+        </div>
+        
+        <div class="statistics-section">
+            <h3>Statistics</h3>
+            <p>Total Sessions: <span id="totalSessions">0</span></p>
+            <p>Total Time Logged: <span id="totalDuration">00:00:00</span></p>
+        </div>
+
+        <div class="history-section">
+            <h2>Session History</h2>
+            <div class="form-group filter-group">
+                <label for="filterDate">Filter by Date:</label>
+                <input type="date" id="filterDate">
+                <button id="clearFilterButton" class="btn-clear-filter">Clear Filter</button>
+            </div>
+            
+            <div id="sessionList" class="session-list">
+                <p id="noSessionsMessage" class="no-data-message">No sessions recorded yet</p>
+            </div>
+        </div>
+        
+        <div id="modalBackdrop" class="modal-backdrop" style="display:none;">
+            <div id="notificationModal" class="modal-dialog">
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../PartA/js/jquery-3.7.1.min.js"></script>
+    <script src="js/stopwatch.js"></script>
+</body>
+</html>
